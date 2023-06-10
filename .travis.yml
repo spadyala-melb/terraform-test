@@ -24,6 +24,8 @@ jobs:
   include:
     - stage: terraform
       name: "Terraform Plan"
+      env:
+        - TF_API_TOKEN=$TF_API_TOKEN
       script:
         # - cd terraform
         - terraform init
