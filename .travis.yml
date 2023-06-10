@@ -28,7 +28,7 @@ jobs:
       script:
         # - cd terraform
         - echo "credentials \"app.terraform.io\" { token = \"$TF_API_TOKEN\" }" > $HOME/.terraformrc
-        - terraform login
+        # - terraform login
         - terraform init
         - terraform validate
         - terraform plan -out=tfplan
