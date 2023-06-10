@@ -29,5 +29,5 @@ jobs:
         - terraform init
         # - terraform validate
         # - terraform plan -out=tfplan
-        # - terraform apply -auto-approve
-        - terraform destroy -auto-approve
+        - terraform apply -auto-approve
+        # - terraform destroy -auto-approve
