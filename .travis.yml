@@ -8,6 +8,7 @@ stages:
 env:
   global:
     - AWS_REGION=ap-southeast-2
+    - TF_API_TOKEN=$TF_API_TOKEN
 
 # Install dependencies and configure AWS CLI
 install:
@@ -24,8 +25,6 @@ jobs:
   include:
     - stage: terraform
       name: "Terraform Plan"
-      env:
-        - TF_API_TOKEN=$TF_API_TOKEN
       script:
         # - cd terraform
         - terraform init
