@@ -29,11 +29,12 @@ jobs:
         - terraform init
         - terraform validate
         - terraform plan -out=tfplan
+        - terraform apply tfplan  -auto-approve
 
-    - stage: terraform
-      name: "Terraform Apply"
-      if: branch = main
-      script:
-        - cd terraform
-        - terraform init
-        - terraform apply -auto-approve tfplan
+    # - stage: terraform
+    #   name: "Terraform Apply"
+    #   if: branch = main
+    #   script:
+    #     - cd terraform
+    #     - terraform init
+    #     - terraform apply tfplan  -auto-approve
