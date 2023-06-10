@@ -29,7 +29,7 @@ jobs:
         - terraform init
         - terraform validate
         - terraform plan -out=tfplan
-        - terraform apply tfplan  -auto-approve
+        - terraform apply -auto-approve
 
     # - stage: terraform
     #   name: "Terraform Apply"
