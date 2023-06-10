@@ -30,11 +30,4 @@ jobs:
         - terraform validate
         - terraform plan -out=tfplan
         - terraform apply -auto-approve
-
-    # - stage: terraform
-    #   name: "Terraform Apply"
-    #   if: branch = main
-    #   script:
-    #     - cd terraform
-    #     - terraform init
-    #     - terraform apply tfplan  -auto-approve
+        - terraform destroy
