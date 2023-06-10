@@ -27,7 +27,7 @@ jobs:
       script:
         # - cd terraform
         - terraform init
-        # - terraform validate
-        # - terraform plan -out=tfplan
+        - terraform validate
+        - terraform plan -out=tfplan
         - terraform apply -auto-approve
         # - terraform destroy -auto-approve
