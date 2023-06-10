@@ -13,18 +13,18 @@ provider "aws" {
 }
 
 # VPC Module
-module "vpc" {
-  source      = "./modules/vpc"
-  vpc_cidr    = "10.0.0.0/16"
-  subnet_cidr = "10.0.0.0/24"
-}
+# module "vpc" {
+#   source      = "./modules/vpc"
+#   vpc_cidr    = "10.0.0.0/16"
+#   subnet_cidr = "10.0.0.0/24"
+# }
 
 # EC2 module
-module "ec2" {
-  source        = "./modules/ec2"
-  ami           = "ami-06ddbc40823fba89a"
-  instance_type = "t2.micro"
-  instance_name = "ec2-instance"
-  subnet_id     = module.vpc.subnet_id
-  vpc_id        = module.vpc.vpc_id
-}
+# module "ec2" {
+#   source        = "./modules/ec2"
+#   ami           = "ami-06ddbc40823fba89a"
+#   instance_type = "t2.micro"
+#   instance_name = "ec2-instance"
+#   subnet_id     = module.vpc.subnet_id
+#   vpc_id        = module.vpc.vpc_id
+# }
