@@ -4,14 +4,14 @@ data "aws_s3_bucket" "existing_bucket" {
 }
 
 # create s3
-resource "aws_s3_bucket_versioning" "mybucket" {
+resource "aws_s3_bucket" "mybucket" {
 
   count = data.aws_s3_bucket.existing_bucket != null ? 0 : 1
 
   bucket = "s3statebucket123456"
-  # versioning {
-  #   enabled = true
-  # }
+  versioning {
+    enabled = true
+  }
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
