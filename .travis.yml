@@ -29,4 +29,4 @@ jobs:
         - terraform validate
         # - terraform plan -out=tfplan
         # - terraform apply -auto-approve
-        - terraform destroy
+        - terraform destroy -auto-approve
