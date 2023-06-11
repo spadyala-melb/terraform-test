@@ -1,11 +1,11 @@
 terraform {
-  required_version = ">= 0.12" # Specify your desired version here
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "spadyala-terraform-org"
-    workspaces {
-      name = "terraform-test"
-    }
+  backend "s3" {
+    bucket         = "s3statebucket123456"
+    dynamodb_table = "state-lock"
+    key            = "statefile/terraform.tfstate"
+    region         = "ap-southeast-2"
+    encrypt        = true
+
   }
   required_providers {
     aws = {
