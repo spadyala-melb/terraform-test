@@ -1,11 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = aws_s3_bucket.terraform_state_bucket.bucket
-    dynamodb_table = aws_dynamodb_table.terraform_state_lock.name
+    bucket         = "s3statebucket123456"
+    dynamodb_table = "terraform_state_lock"
     key            = "terraform.tfstate"
     region         = "ap-southeast-2"
-    encrypt        = true
-
   }
   required_providers {
     aws = {
