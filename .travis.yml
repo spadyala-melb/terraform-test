@@ -25,7 +25,7 @@ jobs:
     - stage: terraform
       name: "Terraform Plan"
       script:
-        - terraform init
+        - terraform init -reconfigure
         - terraform validate
         - terraform plan -out=tfplan
         # - terraform apply -auto-approve
